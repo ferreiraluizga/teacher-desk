@@ -7,7 +7,8 @@
     <title>Teacher Desk</title>
 </head>
 <body>
-    <div class="container">
+    @extends('layouts.sidebar')
+    <div class="main-content">
         @yield('content')
     </div>
 </body>

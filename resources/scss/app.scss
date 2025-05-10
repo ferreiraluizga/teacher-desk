@@ -1,1 +1,20 @@
 @import 'bootstrap/scss/bootstrap';
+
+.main-content {
+    margin-left: 0;
+    margin-top: 60px;
+}
+
+@media (min-width: 1400px) {
+    .main-content {
+        margin-left: 18vw;
+        margin-top: 0;
+    }
+}
+
+.banner {
+    background-image: url(/public/banners/banner_discipulados.png);
+    background-size: cover;
+    background-position: center;
+    height: 50dvh;
+}
