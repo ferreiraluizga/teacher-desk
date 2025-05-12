@@ -12,12 +12,12 @@ class Student extends Model
         'name',
         'description',
         'birth',
-        'class_id'
+        'course_id'
     ];
 
     public function course()
     {
-        return $this->belongsTo(Course::class, 'class_id');
+        return $this->belongsTo(Course::class, 'course_id');
     }
 
     public function average()
