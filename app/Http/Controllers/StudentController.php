@@ -46,10 +46,10 @@ class StudentController extends Controller
         $request->validate([
             'name' => 'required',
             'description' => 'required',
-            'birth' => 'required/date',
-            'course_id' => 'required/exists:courses,id'
+            'birth' => 'required|date',
+            'course_id' => 'required|exists:courses,id'
         ]);
-        Student::where('id', $student->id)->update($request->all());
+        $student->update($request->all());
         return redirect()->route('students.index')->with('success', 'Aluno editado com sucesso!');
     }
 

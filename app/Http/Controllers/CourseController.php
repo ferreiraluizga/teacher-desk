@@ -45,7 +45,7 @@ class CourseController extends Controller
             'name' => 'required',
             'description' => 'required'
         ]);
-        Course::where('id', $course->id)->update($request->all());
+        $course->update($request->all());
         return redirect()->route('courses.index')->with('success', 'Turma editada com sucesso!');
     }
 
