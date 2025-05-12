@@ -14,12 +14,12 @@ return new class extends Migration
         Schema::create('averages', function (Blueprint $table) {
             $table->id();
             $table->foreignId('student_id')->constrained('students')->onDelete('cascade');
-            $table->decimal('participation', 4, 2)->nullable();
-            $table->decimal('book', 4, 2)->nullable();
-            $table->decimal('extra_job', 4, 2)->nullable();
-            $table->decimal('pratical_class', 4, 2)->nullable();
-            $table->decimal('final_exam', 4, 2)->nullable();
-            $table->decimal('recovery_exam', 4, 2)->nullable();
+            $table->decimal('participation', 4, 2);
+            $table->decimal('book', 4, 2);
+            $table->decimal('extra_job', 4, 2);
+            $table->decimal('pratical_class', 4, 2);
+            $table->decimal('final_exam', 4, 2);
+            $table->decimal('recovery_exam', 4, 2);
             $table->integer('period');
             $table->timestamps();
         });
