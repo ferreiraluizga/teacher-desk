@@ -7,43 +7,51 @@ use Illuminate\Http\Request;
 
 class CourseController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
-        //
+        $courses = Course::all();
+        return view('courses.index', compact('courses'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+    public function create(Request $request)
+    {
+        return view('courses.create');
+    }
+
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required'
+        ]);
+        Course::create($request->all());
+        return redirect()->route('courses.index')->with('success', 'Turma adicionada ao sistema com sucesso!');
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Course $course)
     {
-        //
+        return view('courses.show', compact('course'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+    public function edit(Course $course)
+    {
+        return view('courses.edit', compact('product'));
+    }
+
     public function update(Request $request, Course $course)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required'
+        ]);
+        Course::where('id', $course->id)->update($request->all());
+        return redirect()->route('courses.index')->with('success', 'Turma editada com sucesso!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Course $course)
     {
-        //
+        $course->delete();
+        return redirect()->route('courses.index')->with('success', 'Turma removida com sucesso!');
     }
 }
