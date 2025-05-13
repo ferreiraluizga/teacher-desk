@@ -3,6 +3,6 @@
 @section ('content')
 @extends ('layouts.header')
     <div class="main-content p-5">
-        <h1>Welcome to Teacher Desk</h1>
+        <h1>Turmas</h1>
     </div>
 @endsection
