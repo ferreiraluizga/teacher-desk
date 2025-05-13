@@ -20,7 +20,7 @@ return new class extends Migration
             $table->decimal('pratical_class', 4, 2);
             $table->decimal('final_exam', 4, 2);
             $table->decimal('recovery_exam', 4, 2);
-            $table->integer('period');
+            $table->enum('period', ['1st', '2nd', '3rd', '4th']);
             $table->timestamps();
         });
     }

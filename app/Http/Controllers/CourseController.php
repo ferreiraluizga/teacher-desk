@@ -14,11 +14,6 @@ class CourseController extends Controller
         return view('courses.index', compact('courses'));
     }
 
-    public function create(Request $request)
-    {
-        return view('courses.create');
-    }
-
     public function store(Request $request)
     {
         $request->validate([
@@ -31,12 +26,8 @@ class CourseController extends Controller
 
     public function show(Course $course)
     {
-        return view('courses.show', compact('course'));
-    }
-
-    public function edit(Course $course)
-    {
-        return view('courses.edit', compact('product'));
+        $students = $course->students()->get();
+        return view('courses.show', compact('course', 'students'));
     }
 
     public function update(Request $request, Course $course)
