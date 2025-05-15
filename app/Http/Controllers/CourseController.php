@@ -27,6 +27,10 @@ class CourseController extends Controller
     public function show(Course $course)
     {
         $students = $course->students()->get();
+        $students->map(function ($student) {
+            $student->averages = $student->average()->get()->groupBy('period');
+            return $student;
+        });
         return view('courses.show', compact('course', 'students'));
     }
 

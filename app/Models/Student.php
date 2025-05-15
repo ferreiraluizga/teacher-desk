@@ -26,6 +26,6 @@ class Student extends Model
 
     public function average()
     {
-        return $this->hasOne(Average::class, 'student_id');
+        return $this->hasMany(Average::class, 'student_id');
     }
 }
