@@ -17,7 +17,7 @@
             @foreach ($courses as $course)
             <div class="col">
                 <div class="card card-hover rounded-5 shadow-lg border-0">
-                    <div class="card-header bg-primary text-white align-items-center d-flex justify-content-center rounded-pill">
+                    <div class="card-header bg-primary text-white align-items-center d-flex justify-content-center rounded-pill text-center">
                         <h5 class="fw-semibold">{{ $course->name }}</h5>
                     </div>
                     <div class="card-body p-4">

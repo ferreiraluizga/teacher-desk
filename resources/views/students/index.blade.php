@@ -17,12 +17,12 @@
             @foreach ($students as $student)
             <div class="col">
                 <div class="card card-hover rounded-5 shadow-lg border-0">
-                    <div class="card-header bg-success text-white align-items-center d-flex justify-content-center rounded-pill">
+                    <div class="card-header bg-success text-white align-items-center d-flex justify-content-center rounded-pill text-center">
                         <h5 class="fw-semibold">{{ $student->name }}</h5>
                     </div>
                     <div class="card-body p-4">
                         <p class="card-text">{{ $student->description }}</p>
-                        <a href="{{ route('courses.show', $student->id) }}"
+                        <a href="{{ route('students.show', $student->id) }}"
                             class="stretched-link text-decoration-none"
                             style="z-index: 1;"></a>
 
