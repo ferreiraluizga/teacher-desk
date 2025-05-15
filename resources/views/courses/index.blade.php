@@ -16,9 +16,11 @@
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-5">
             @foreach ($courses as $course)
             <div class="col">
-                <div class="card card-hover rounded-4 p-2 shadow-lg border-0">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ $course->name }}</h5>
+                <div class="card card-hover rounded-5 shadow-lg border-0">
+                    <div class="card-header bg-primary text-white align-items-center d-flex justify-content-center rounded-pill">
+                        <h5 class="fw-semibold">{{ $course->name }}</h5>
+                    </div>
+                    <div class="card-body p-4">
                         <p class="card-text">{{ $course->description }}</p>
                         <a href="{{ route('courses.show', $course->id) }}"
                             class="stretched-link text-decoration-none"

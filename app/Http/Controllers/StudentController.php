@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
 use App\Models\Student;
 use Illuminate\Http\Request;
 
@@ -10,13 +11,9 @@ class StudentController extends Controller
 
     public function index()
     {
-        $students = Student::all();
-        return view('students.index', compact('students'));
-    }
-
-    public function create()
-    {
-        return view('students.create');
+        $students = Student::paginate(9);
+        $courses = Course::all();
+        return view('students.index', compact('students', 'courses'));
     }
 
     public function store(Request $request)
@@ -24,8 +21,8 @@ class StudentController extends Controller
         $request->validate([
             'name' => 'required',
             'description' => 'required',
-            'birth' => 'required/date',
-            'course_id' => 'required/exists:courses,id'
+            'birth' => 'required|date',
+            'course_id' => 'required|exists:courses,id'
         ]);
         Student::create($request->all());
         return redirect()->route('students.index')->with('success', 'Aluno adicionado ao sistema com sucesso!');
