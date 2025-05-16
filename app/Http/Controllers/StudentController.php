@@ -30,6 +30,7 @@ class StudentController extends Controller
 
     public function show(Student $student)
     {
+        $student->averages = $student->average()->get()->groupBy('period');
         return view('students.show', compact('student'));
     }
 
