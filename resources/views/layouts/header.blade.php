@@ -2,7 +2,7 @@
     <aside class="d-flex flex-column text-white bg-success flex-shrink-0 p-3 shadow-lg position-fixed"
         style="width: 18vw; height: 100vh;">
         <a class="navbar-brand text-center" href="{{ route('home') }}" style="margin-bottom: 1vw; margin-top: 1vw;">
-            <img src="assets/img/logo.png" alt="Logo" height="170" class="d-inline-block align-text-top">
+            <img src="{{ asset('logo.png') }}" alt="Logo" height="200" class="d-inline-block align-text-top">
         </a>
         <hr>
         <ul class="nav nav-pills flex-column mb-auto" style="margin-top: 1vw; ">
@@ -14,20 +14,14 @@
             </li>
             <li class="nav-item">
                 <a href="{{ route('courses.index') }}" class="nav-link text-white">
-                    <i class="bi bi-house-fill me-2"></i>
+                    <i class="bi bi-people-fill me-2"></i>
                     Turmas
                 </a>
             </li>
             <li class="nav-item">
                 <a href="{{ route('students.index') }}" class="nav-link text-white">
-                    <i class="bi bi-house-fill me-2"></i>
+                    <i class="bi bi-person-fill me-2"></i>
                     Alunos
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="{{ route('averages.index') }}" class="nav-link text-white">
-                    <i class="bi bi-house-fill me-2"></i>
-                    Médias
                 </a>
             </li>
         </ul>
@@ -53,7 +47,7 @@
     <div class="container d-flex justify-content-center align-items-center">
         <div class="col-4 text-start">
             <a class="navbar-brand text-center" href="{{ route('home') }}">
-                <img src="assets/img/logo.png" alt="Logo" height="40">
+                <img src="{{ asset('logo.png') }}" alt="Logo" height="50">
             </a>
         </div>
         <div class="col-4 d-flex justify-content-center">
@@ -95,20 +89,14 @@
             </li>
             <li class="nav-item">
                 <a href="{{ route('courses.index') }}" class="nav-link text-white">
-                    <i class="bi bi-house-fill me-2"></i>
+                    <i class="bi bi-people-fill me-2"></i>
                     Turmas
                 </a>
             </li>
             <li class="nav-item">
                 <a href="{{ route('students.index') }}" class="nav-link text-white">
-                    <i class="bi bi-house-fill me-2"></i>
+                    <i class="bi bi-person-fill me-2"></i>
                     Alunos
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="{{ route('averages.index') }}" class="nav-link text-white">
-                    <i class="bi bi-house-fill me-2"></i>
-                    Médias
                 </a>
             </li>
         </ul>

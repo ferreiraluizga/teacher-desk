@@ -8,7 +8,7 @@
             <h1 class="fw-semibold text-white display-4">{{ $student->name }}</h1>
         </div>
     </section>
-    <div class="container px-4">
+    <div class="container px-5">
         <div class="row mb-5">
             <h3 class="fw-semibold">Descrição do Aluno</h3>
             <p class="text-justify">{{ $student->description }}</p>
@@ -33,33 +33,43 @@
             @endphp
 
             @if ($average)
-            <ul>
-                <li><strong>Participação:</strong> {{ $average->participation }}</li>
-                <li><strong>Livro:</strong> {{ $average->book }}</li>
-                <li><strong>Trabalho Extra:</strong> {{ $average->extra_job }}</li>
-                <li><strong>Aula Prática:</strong> {{ $average->pratical_class }}</li>
-                <li><strong>Prova Final:</strong> {{ $average->final_exam }}</li>
-                <li><strong>Recuperação:</strong> {{ $average->recovery_exam }}</li>
-
-                @php
-                $final_average = (
-                $average->participation +
-                $average->book +
-                $average->extra_job +
-                $average->pratical_class +
-                $average->final_exam +
-                $average->recovery_exam
-                ) / 6;
-                $final_average = number_format($final_average, 2, '.', '');
-                @endphp
-
-                <li>
-                    <strong>Média Final:</strong>
-                    <span class="{{ $final_average < 6 ? 'text-danger' : 'text-success' }}">
-                        {{ $final_average }}
-                    </span>
-                </li>
-            </ul>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Participação</th>
+                            <th scope="col">Apostila</th>
+                            <th scope="col">Trabalho Extra / Pesquisa</th>
+                            <th scope="col">Aula Prática</th>
+                            <th scope="col">Prova</th>
+                            <th scope="col">Recuperação</th>
+                            <th scope="col">Média</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{ $average->participation }}</td>
+                            <td>{{ $average->book }}</td>
+                            <td>{{ $average->extra_job }}</td>
+                            <td>{{ $average->pratical_class }}</td>
+                            <td>{{ $average->final_exam }}</td>
+                            <td>{{ $average->recovery_exam }}</td>
+                            @php
+                            $final_average = (
+                            $average->participation +
+                            $average->book +
+                            $average->extra_job +
+                            $average->pratical_class +
+                            $average->final_exam +
+                            $average->recovery_exam
+                            ) / 6;
+                            $final_average = number_format($final_average, 2, '.', '');
+                            @endphp
+                            <td class="{{ $final_average < 6 ? 'table-danger' : 'table-success' }}">{{ $final_average }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
             @else
             <p class="text-muted"><em>Sem notas registradas para este bimestre.</em></p>
             @endif

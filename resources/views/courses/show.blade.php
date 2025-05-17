@@ -30,7 +30,7 @@
                         $periods = ['1st', '2nd', '3rd', '4th'];
                         @endphp
                         <tr>
-                            <td><a href="" class="link-dark">{{ $student->name }}</a></td>
+                            <td><a href="{{ route('students.show', $student->id) }}" class="link-dark">{{ $student->name }}</a></td>
 
                             @foreach ($periods as $period)
                             @php
