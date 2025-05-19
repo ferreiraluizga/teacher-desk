@@ -1,13 +1,13 @@
 <div class="d-none d-xxl-block">
     <aside class="d-flex flex-column text-white bg-success flex-shrink-0 p-3 shadow-lg position-fixed"
         style="width: 18vw; height: 100vh;">
-        <a class="navbar-brand text-center" href="{{ route('dashboard') }}" style="margin-bottom: 1vw; margin-top: 1vw;">
+        <a class="navbar-brand text-center" href="{{ route('home') }}" style="margin-bottom: 1vw; margin-top: 1vw;">
             <img src="{{ asset('logo.png') }}" alt="Logo" height="200" class="d-inline-block align-text-top">
         </a>
         <hr>
         <ul class="nav nav-pills flex-column mb-auto" style="margin-top: 1vw; ">
             <li class="nav-item">
-                <a href="{{ route('dashboard') }}" class="nav-link text-white">
+                <a href="{{ route('home') }}" class="nav-link text-white">
                     <i class="bi bi-house-fill me-2"></i>
                     Home
                 </a>
@@ -29,21 +29,14 @@
         <div class="dropdown-center mt-2 d-flex justify-content-center">
             <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
                 id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                <strong class="nome">{{ Auth::user()->name }}</strong>
+                <strong class="nome">Usuário</strong>
             </a>
             <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-                <li><a class="dropdown-item" href="">Minha Conta</a></li>
+                <li><a class="dropdown-item" href="#">Minha Conta</a></li>
                 <li>
                     <hr class="dropdown-divider">
                 </li>
-                <li>
-                    <form method="POST" action="{{ route('logout') }}" id="logout-form">
-                        @csrf
-                        <a href="#" class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                            Logout
-                        </a>
-                    </form>
-                </li>
+                <li><a class="dropdown-item" href="#">Logout</a></li>
             </ul>
         </div>
     </aside>
@@ -53,7 +46,7 @@
 <nav class="navbar p-3 d-block d-xxl-none navbar-dark bg-success shadow-lg fixed-top">
     <div class="container d-flex justify-content-center align-items-center">
         <div class="col-4 text-start">
-            <a class="navbar-brand text-center" href="{{ route('dashboard') }}">
+            <a class="navbar-brand text-center" href="{{ route('home') }}">
                 <img src="{{ asset('logo.png') }}" alt="Logo" height="50">
             </a>
         </div>
@@ -61,14 +54,14 @@
             <div class="dropdown">
                 <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
                     id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                    <strong class="nome">{{ Auth::user()->name }}</strong>
+                    <strong class="nome">Usuário</strong>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-                    <li><a class="dropdown-item" href="{{ route('profile.edit') }}">Minha Conta</a></li>
+                    <li><a class="dropdown-item" href="#">Minha Conta</a></li>
                     <li>
                         <hr class="dropdown-divider">
                     </li>
-                    <li><a class="dropdown-item" href="{{ route('logout') }}">Logout</a></li>
+                    <li><a class="dropdown-item" href="#">Logout</a></li>
                 </ul>
             </div>
         </div>
@@ -89,7 +82,7 @@
     <div class="offcanvas-body">
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a href="{{ route('dashboard') }}" class="nav-link text-white">
+                <a href="{{ route('home') }}" class="nav-link text-white">
                     <i class="bi bi-house-fill me-2"></i>
                     Home
                 </a>
